@@ -1,0 +1,14 @@
+/Users/qcri_shammur/Tools/anaconda3/lib/python3.7/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+None
+              precision    recall  f1-score   support
+
+     NOT_OFF       0.94      0.95      0.95       821
+         OFF       0.77      0.71      0.74       179
+
+    accuracy                           0.91      1000
+   macro avg       0.85      0.83      0.84      1000
+weighted avg       0.91      0.91      0.91      1000
+
+time taken:
+0:00:01
