@@ -21,25 +21,3 @@ pip install -r requirements.txt
 python bin/SVM_with_BagOfWords_classifier.py -c models/sm_news_en_trn_svm_svm.config -d data/sample_data.csv -o results/sample_data_classified_label.csv
 ```
 
-### BERT
-To run the BERT-based classification model, please follow the steps below:
-
-#### Create a virtual environment
-```
-python3 -m venv news_cat_bert_env
-```
-#### Activate your virtual environment
-```
-source $PATH_TO_ENV/news_cat_bert_env/bin/activate
-```
-
-#### Install dependencies
-```
-pip install -r requirements_py3.7_bert.txt
-```
-
-#### Run the classification script
-
-```
-bash bin/bert_multiclass_classification.sh
-```
