@@ -1,12 +1,9 @@
 
 
 # Arabic Offensive Language Detection model from social media posts/comments.
-This is a release includes model for offensive language detection for Arabic social media posts, trained using comments from different online platforms and tweets.
-The model use a traditional SVM designed using character ngrams. The motivation for using Support Vector model is to handle the skewneess present in the dataset (see Table 1, for more details). The model is evaluated using:
-* 5-fold cross validation for evaluating in-domain data performance
-* Official dev set for OSACT Offensive Language detection competition
-* Other available dataset :
+This release includes model for offensive language detection for Arabic social media posts, trained using comments from different online platforms and tweets.
 
+## Data Annotation
 
 To train the model, we annotated ~5000 amount of data consists of 2 categories: offensive (OFF) and not offensive (NOT_OFF).
 The contents are collected from the following sources:
@@ -28,7 +25,11 @@ Will be available in the proceedings of LREC2020:
 ```
 In addition to the dataset mentioned in the above paper, we also added 948 data points along with 7000 annotated tweet from the training data of OSACT.
 
-## Training the models
+## Model training and evaluation
+
+The model use a traditional SVM designed using character ngrams. The motivation for using Support Vector model is to handle the skewneess present in the dataset (see Table 1, for more details). The model is evaluated using:
+* 5-fold cross validation for evaluating in-domain data performance
+* Official dev set for OSACT Offensive Language detection competition
 
 ### SVM
 For the training the classifier with SVM, we used TF-IDF representations for character ngrams (1,8). The reason to choose SVM with TF-IDF is their simplicity and execution time while having comparable performance for such dataset nature.
@@ -48,7 +49,9 @@ The output of the file will include the following fields
 `<id>\t<text>\t<class_label>\t<predicted_class_label>`
 here predicted_class_label is the output of the model (OFF/NOT_OFF)
 
-## Predicting using the models
+
+
+## Prediction using the models
 To run the classification model please use python version 3.7, install dependencies
 
 To install the requirements:
@@ -76,7 +79,7 @@ Example:
 python bin/prediction_model.py.py -c models/ar_offensive_detection_svm.config -d sample_data/dataset_format_with_ref_labels.tsv -o results/dataset_with_reflab.tsv --eval yes &> logs/result_dataset_with_reflab.log
 ```
 
-### Classification Results
+## Classification Results
 
 As mentioned earlier, the performance of the model is tested using 1) 5-fold CV on training data 2) official dev set for OSACT (LREC2020) along with other 3? out of domain data including:
 
